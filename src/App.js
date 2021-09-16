@@ -12,15 +12,26 @@ function App() {
   const [tickets, setTickets] = useState([])
   const [filter, setFilter] = useState('самый дешевый')
   const [slice, setSlice] = useState(5)
+  const [transshipment, setTransshipment] = useState(4) //  0 or 1 or 2 or 3 or 4
+
+  const filtred = transshipment<3 ?  
+
+    tickets.filter(ticket =>
+        ticket.segments[0].stops.length  <= transshipment
+    )
+     :
+    [...tickets]
 
 
-  const slisedArr = tickets.slice(0, slice)
+
+
+  const slisedArr = filtred.slice(0, slice)
 
   const sorted = slisedArr.sort(
     filter === 'самый дешевый' ? cheapestTicketSort: 
     filter === 'самый быстрый' ? fastestTicketSort : optionalTicketSort
   )
-  
+ 
 
 
   useEffect(()=> {
@@ -42,7 +53,10 @@ function App() {
 
 
       <div className={styles.content_wrapper}>
-        <SideBarFilter />
+        <SideBarFilter
+            transshipment = {transshipment}
+            setTransshipment = {setTransshipment}
+        />
 
         <div className={styles.tickets_holder}>
           <TicketsHolderHeader
@@ -60,16 +74,17 @@ function App() {
 
             )
           }
-          
 
 
-
-          <div
-           className={styles.show_5_more_tickets_btn}
-           onClick={()=>setSlice(prev => prev+5)}
-          >
-             ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
-          </div>
+          {
+            slice<filtred.length &&
+             <div
+                className={styles.show_5_more_tickets_btn}
+                onClick={()=>setSlice(prev => prev+5)}
+              >
+                ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
+            </div>
+          }
 
         </div>
       </div>

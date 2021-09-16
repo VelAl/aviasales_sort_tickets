@@ -9,7 +9,10 @@ export const getTickets = async () => {
         const response = await axios.get(`${url}/tickets?searchId=${token.data.searchId}`)
         return(response.data.tickets)
 
-    } catch (e) { alert(`error: ${e.response.data}`) }
+    } catch (e) { 
+        alert(`error: ${e.response.data}`) 
+        getTickets()
+    }
     
 
 }

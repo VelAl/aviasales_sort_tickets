@@ -1,5 +1,4 @@
 import styles from './ticket.module.css'
-import logo from '../../icons/S7_Logo.png'
 import React from 'react';
 import { duration, startTime_destinationTime } from '../../functions/timeFuncs';
 
@@ -15,7 +14,7 @@ const Ticket = ({ticket})=> {
         <div className={styles.ticket_wrapper}>
             <div className={styles.ticket_header}>
                 <div className={styles.price}>{ticket.price} P</div>
-                <div className={styles.logo}><img alt="" src={logo} /></div>
+                <div className={styles.logo}><img alt="" src={`https://pics.avs.io/99/36/${ticket.carrier}.png`} /></div>
             </div>
 
 
