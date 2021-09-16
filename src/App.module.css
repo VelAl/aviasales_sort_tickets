@@ -1,0 +1,48 @@
+.App {
+  background-color: #E5E5E5;
+  min-height: 100vh;
+  max-width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.main_logo_holder{
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.content_wrapper{
+  width: 754px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.tickets_holder {
+  width: 502px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+.show_5_more_tickets_btn{
+  height: 50px;
+  width: 502px;
+  border-radius: 5px;
+  background: #2196F3;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;justify-content: center;
+  color: #FFFFFF;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+}

@@ -1,0 +1,38 @@
+.header_filter{
+  display: flex;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.header_filter_option{
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  border: 1px solid #DFE5EC;
+  background: #FFFFFF;
+  font-family: "Open sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.active_header_filter_option{
+  background: #2196F3;
+  color: #FFFFFF;
+}
+
+
+.header_filter_option:first-child{
+  border-radius: 5px 0 0 5px;
+}
+
+.header_filter_option:last-child{
+  border-radius: 0 5px 5px 0 ;
+}
+  
