@@ -14,6 +14,9 @@ function App() {
   const [slice, setSlice] = useState(5)
   const [transshipment, setTransshipment] = useState(4) //  0 or 1 or 2 or 3 or 4
 
+
+  
+
   const filtred = transshipment<3 ?  
 
     tickets.filter(ticket =>
@@ -36,8 +39,7 @@ function App() {
 
   useEffect(()=> {
     getTickets()
-      .then(data => data ?  setTickets(data) : null )
-      .catch(e=>{})
+      .then(data => {if(data)  setTickets(data)})
   },[])
 
 
