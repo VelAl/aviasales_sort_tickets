@@ -5,8 +5,6 @@ import { duration, startTime_destinationTime } from '../../functions/timeFuncs';
 
 const Ticket = ({ticket})=> {
 
- 
-
     const [destinationInfo, comeBackInfo] = ticket.segments
 
 
